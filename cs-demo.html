@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电商小二 · 智能客服 · 离线演示</title>
+<style>
+:root{
+  --bg:#faf6ee; --ink:#3a3326; --muted:#8a8270; --acc:#b8902f;
+  --card:#fffdf8; --bd:rgba(184,144,47,.30); --desc:#5a4f3a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--bg); color:var(--ink); min-height:100vh;
+  font-family:"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  transition:background .35s,color .35s;
+}
+.back{
+  position:fixed; top:14px; left:14px; z-index:99;
+  display:inline-flex; align-items:center; gap:6px;
+  padding:8px 14px; border-radius:999px;
+  background:rgba(58,51,38,.85); border:1px solid var(--bd);
+  color:#fff; font:13px/1 system-ui,sans-serif; text-decoration:none;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:72px 24px 80px;}
+.kicker{font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--acc); margin-bottom:10px;}
+h1{font-size:30px; font-weight:700; letter-spacing:.02em;}
+.sub{color:var(--muted); margin-top:10px; line-height:1.7; font-size:14px;}
+.tabs{display:flex; gap:10px; margin:34px 0 18px; flex-wrap:wrap;}
+.tab{
+  padding:9px 18px; border-radius:999px; cursor:pointer; font-size:13.5px;
+  border:1px solid var(--bd); background:var(--card); color:var(--desc);
+  transition:all .25s;
+}
+.tab.on{background:var(--acc); border-color:var(--acc); color:#fff;}
+.pane{display:none;}
+.pane.on{display:block;}
+.stage{
+  background:var(--card); border:1px solid var(--bd); border-radius:14px;
+  overflow:hidden; box-shadow:0 12px 40px rgba(20,24,64,.08);
+}
+video{display:block; width:100%; max-height:560px; background:#111; object-fit:contain;}
+.note{
+  margin-top:14px; font-size:13px; color:var(--muted); line-height:1.8;
+  padding:14px 18px; border-left:3px solid var(--acc); background:var(--card); border-radius:0 10px 10px 0;
+}
+.gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px;}
+.gallery img{
+  width:100%; border-radius:10px; border:1px solid var(--bd); background:#fff; display:block;
+}
+.cap{font-size:12.5px; color:var(--muted); margin:8px 2px 0; text-align:center;}
+footer{margin-top:56px; text-align:center; font-size:12.5px; color:var(--muted);}
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← 返回作品集</a>
+<div class="wrap">
+  <div class="kicker">E-Commerce AI Support · Offline Demo</div>
+  <h1>电商小二 · 智能客服</h1>
+  <p class="sub">任务 / 知识 / 闲聊三轨分流，订单与商品对象一键注入会话；含 3D 数字人与语音播报通道。
+  本页为<strong>离线演示</strong>：录屏与界面截图本地播放，不依赖任何服务器。</p>
+
+  <div class="tabs">
+    <button class="tab on"  data-p="p1" type="button">完整业务演示</button>
+    <button class="tab"     data-p="p2" type="button">3D 数字人</button>
+    <button class="tab"     data-p="p3" type="button">界面截图</button>
+  </div>
+
+  <div class="pane on" id="p1">
+    <div class="stage">
+      <video controls preload="metadata" src="media/cs-demo.mp4"></video>
+    </div>
+    <div class="note">录屏内容：演示账号登录 → 选择订单对象 → 多轮业务办理（查单 / 催发 / 售后）→ 三轨分流与知识库应答。全长约 1 分 12 秒，可拖动进度条快进。</div>
+  </div>
+
+  <div class="pane" id="p2">
+    <div class="stage">
+      <video controls preload="metadata" src="media/dh-demo.mp4"></video>
+    </div>
+    <div class="note">数字人通道：接入魔珐星云 3D 驱动与 TTS 语音播报。线上环境当前以静态形象 + 预置话术演示，本视频为真实驱动的完整效果。</div>
+  </div>
+
+  <div class="pane" id="p3">
+    <div class="gallery">
+      <div><img src="shots/cs-1.png" alt="登录页 · 演示账号选择"><div class="cap">登录页 · 三个演示账号一键选择（u1001 / u1002 / u1003）</div></div>
+      <div><img src="shots/cs-2.png" alt="三栏工作台 · 订单对象注入"><div class="cap">三栏工作台 · 订单对象注入会话（数字人待连接）</div></div>
+      <div><img src="shots/cs-3.png" alt="数字人就绪 · 上下文进入会话"><div class="cap">数字人就绪 · 订单上下文随对话进入会话</div></div>
+      <div><img src="shots/cs-4.png" alt="业务办理 · 物流查询应答"><div class="cap">业务办理 · 物流查询应答，运单号与进度回填</div></div>
+      <div><img src="shots/cs-5.png" alt="桌面端全览"><div class="cap">桌面端全览 · 数字人 / 对话 / 业务对象三栏联动</div></div>
+    </div>
+  </div>
+
+  <footer>电商智能客服 · 离线演示包 · 界面与数据均为演示环境</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
+  document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('on',p.id===t.dataset.p));
+  document.querySelectorAll('.pane video').forEach(v=>{v.pause();});
+}));
+</script>
+</body>
+</html>
