@@ -44,11 +44,13 @@ video{display:block; width:100%; max-height:560px; background:#111; object-fit:c
   margin-top:14px; font-size:13px; color:var(--muted); line-height:1.8;
   padding:14px 18px; border-left:3px solid var(--acc); background:var(--card); border-radius:0 10px 10px 0;
 }
-.gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px;}
+.gallery{display:flex; flex-direction:column; gap:36px;}
+.gallery > div{width:100%;}
 .gallery img{
-  width:100%; border-radius:10px; border:1px solid var(--bd); background:#fff; display:block;
+  width:100%; height:auto; border-radius:10px; border:1px solid var(--bd); background:#fff; display:block;
 }
-.cap{font-size:12.5px; color:var(--muted); margin:8px 2px 0; text-align:center;}
+.gallery > div:first-child img{max-width:420px; margin:0 auto;}
+.cap{font-size:13px; color:var(--muted); margin:12px 2px 0; text-align:center;}
 footer{margin-top:56px; text-align:center; font-size:12.5px; color:var(--muted);}
 </style>
 </head>
@@ -68,25 +70,25 @@ footer{margin-top:56px; text-align:center; font-size:12.5px; color:var(--muted);
 
   <div class="pane on" id="p1">
     <div class="stage">
-      <video controls preload="metadata" src="media/cs-demo.mp4?v=2"></video>
+      <video controls preload="metadata" src="media/cs-demo.mp4?v=3"></video>
     </div>
     <div class="note">录屏内容：演示账号登录 → 选择订单对象 → 多轮业务办理（查单 / 催发 / 售后）→ 三轨分流与知识库应答。全长约 1 分 12 秒，可拖动进度条快进。</div>
   </div>
 
   <div class="pane" id="p2">
     <div class="stage">
-      <video controls preload="metadata" src="media/dh-demo.mp4?v=2"></video>
+      <video controls preload="none" src="media/dh-demo.mp4?v=3"></video>
     </div>
     <div class="note">数字人通道：接入魔珐星云 3D 驱动与 TTS 语音播报。线上环境当前以静态形象 + 预置话术演示，本视频为真实驱动的完整效果。</div>
   </div>
 
   <div class="pane" id="p3">
     <div class="gallery">
-      <div><img src="shots/cs-1.png" alt="登录页 · 演示账号选择"><div class="cap">登录页 · 三个演示账号一键选择（u1001 / u1002 / u1003）</div></div>
-      <div><img src="shots/cs-2.png" alt="三栏工作台 · 订单对象注入"><div class="cap">三栏工作台 · 订单对象注入会话（数字人待连接）</div></div>
-      <div><img src="shots/cs-3.png" alt="数字人就绪 · 上下文进入会话"><div class="cap">数字人就绪 · 订单上下文随对话进入会话</div></div>
-      <div><img src="shots/cs-4.png" alt="业务办理 · 物流查询应答"><div class="cap">业务办理 · 物流查询应答，运单号与进度回填</div></div>
-      <div><img src="shots/cs-5.png" alt="桌面端全览"><div class="cap">桌面端全览 · 数字人 / 对话 / 业务对象三栏联动</div></div>
+      <div><img loading="lazy" decoding="async" src="shots/cs-1.png" alt="登录页 · 演示账号选择"><div class="cap">登录页 · 三个演示账号一键选择（u1001 / u1002 / u1003）</div></div>
+      <div><img loading="lazy" decoding="async" src="shots/cs-2.png" alt="三栏工作台 · 订单对象注入"><div class="cap">三栏工作台 · 订单对象注入会话（数字人待连接）</div></div>
+      <div><img loading="lazy" decoding="async" src="shots/cs-3.png" alt="数字人就绪 · 上下文进入会话"><div class="cap">数字人就绪 · 订单上下文随对话进入会话</div></div>
+      <div><img loading="lazy" decoding="async" src="shots/cs-4.png" alt="业务办理 · 物流查询应答"><div class="cap">业务办理 · 物流查询应答，运单号与进度回填</div></div>
+      <div><img loading="lazy" decoding="async" src="shots/cs-5.png" alt="桌面端全览"><div class="cap">桌面端全览 · 数字人 / 对话 / 业务对象三栏联动</div></div>
     </div>
   </div>
 
