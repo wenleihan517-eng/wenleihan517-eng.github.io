@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>作品集 · 时安</title>
+<title>作品集 · 韩文蕾</title>
 <style>
 :root{
   --bg:#0d0d10; --ink:#e8e2d4; --muted:#9a9384; --acc:#c9a24b; --on:#0d0d10;
@@ -73,7 +73,9 @@ body{font-family:Georgia,"Times New Roman","Noto Serif SC",serif;background:var(
 .pbtn:hover{background:var(--btn);color:var(--btn-on);border-color:var(--btn);}
 .pbtn:active{transform:scale(.94);}
 /* ---------- 作品封面：KB A/B 切换截图 ---------- */
-.wshot .shot-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1;}
+.wshot .shot-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1;transition:transform .45s ease;transform-origin:center center;}
+.wshot:hover .shot-img{transform:scale(1.12);}
+.wshot:hover{cursor:zoom-in;}
 .wshot.noimg .shot-img{display:none;}
 .wshot .shot-toggle{position:absolute;right:8px;bottom:8px;z-index:2;display:inline-flex;align-items:center;gap:4px;font:700 11px/1.2 "Helvetica Neue",Arial,sans-serif;letter-spacing:.03em;color:#fff;background:rgba(20,20,25,.42);border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:5px 10px;cursor:pointer;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);transition:opacity .2s,transform .1s,background .2s;}
 .wshot .shot-toggle:hover{opacity:1;background:rgba(20,20,25,.6);}
@@ -87,8 +89,8 @@ body{font-family:Georgia,"Times New Roman","Noto Serif SC",serif;background:var(
 .cap .used{font-size:12.5px;color:var(--desc);font-family:"Helvetica Neue",Arial,sans-serif;margin-top:10px;transition:color .35s;}
 .cap-note{margin-top:22px;font-size:12.5px;color:var(--muted);font-family:"Helvetica Neue",Arial,sans-serif;transition:color .35s;}
 /* ---------- Evidence ---------- */
-.evi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
-.evi-cell{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:18px;transition:border-color .2s,background .35s;}
+.evi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.evi-cell{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:20px;transition:border-color .2s,background .35s;}
 .evi-cell:hover{border-color:var(--acc);}
 .evi-cell .en{font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-family:"Helvetica Neue",Arial,sans-serif;transition:color .35s;}
 .evi-cell .ev{font-size:32px;font-weight:800;color:var(--acc);margin:6px 0 4px;line-height:1;}
@@ -113,7 +115,7 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
   .layout{flex-direction:column;}.sidebar{position:static;width:100%;min-height:auto;border-right:none;border-bottom:1px solid var(--bd);}
   .nav{flex-direction:row;flex-wrap:wrap;}.nav-item.sub{padding:7px 13px;}.nav-sep{display:none;}
   .content{padding:0 20px 60px;}.themes-label{min-width:0;}
-  .wgrid{grid-template-columns:1fr;}.about{grid-template-columns:1fr;}
+  .wgrid{grid-template-columns:1fr;}.about{grid-template-columns:1fr;}.evi{grid-template-columns:1fr;gap:14px;}
   .hero h2{font-size:30px;}
 }
 </style>
@@ -123,25 +125,25 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
   <!-- ===== 左侧边栏：区块 + 项目导航 ===== -->
   <aside class="sidebar">
     <div class="brand">
-      <h1>时安</h1>
+      <h1>韩文蕾</h1>
       <p>Portfolio</p>
-      <p class="role">全栈 AI 工程师 · 大模型应用方向</p>
+      <p class="role">AI 应用开发 / 智能体开发 / FDE</p>
     </div>
     <nav class="nav" id="nav">
       <a class="nav-item" href="#works" data-target="works">作品</a>
-      <a class="nav-item sub" href="#js" data-target="js">· 玖枢智能体工作台</a>
-      <a class="nav-item sub" href="#kb" data-target="kb">· 知识库 RAG</a>
+      <a class="nav-item sub" href="#js" data-target="js">· 玖枢 · AI 智能体工作台</a>
+      <a class="nav-item sub" href="#kb" data-target="kb">· 文枢知识库</a>
       <a class="nav-item sub" href="#ops" data-target="ops">· 灵析电商运营助手</a>
-      <a class="nav-item sub" href="#cs" data-target="cs">· 智能客服</a>
+      <a class="nav-item sub" href="#cs" data-target="cs">· 电商智能客服</a>
       <a class="nav-item sub" href="#da" data-target="da">· 智能问数</a>
-      <a class="nav-item sub" href="#cr" data-target="cr">· 合同审查</a>
+      <a class="nav-item sub" href="#cr" data-target="cr">· 明契智审 · 合同智能审查</a>
       <div class="nav-sep"></div>
       <a class="nav-item" href="#caps" data-target="caps">能力</a>
       <a class="nav-item" href="#evidence" data-target="evidence">数字</a>
       <a class="nav-item" href="#about" data-target="about">关于</a>
     </nav>
     <div class="nav-sep"></div>
-    <p style="font-size:12px;color:var(--muted);font-family:'Helvetica Neue',Arial,sans-serif;padding:0 13px;line-height:1.6;transition:color .35s;">页面顶部「主题」按钮可展开配色 / 字体 / 按钮切换。</p>
+    <p style="font-size:12px;color:var(--muted);font-family:'Helvetica Neue',Arial,sans-serif;padding:0 13px;line-height:1.6;transition:color .35s;">封面悬停放大 · 点 ⇄ 换帧；顶部「主题」可换配色、字体与按钮。</p>
   </aside>
 
   <!-- ===== 右侧主内容 ===== -->
@@ -186,13 +188,13 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
 
     <!-- ===== Hero ===== -->
     <section class="hero">
-      <h2>把 AI 做成<em>能用</em>的产品。</h2>
-      <p class="lead">少即是多——前端常驻、后端按需，五个生产级 AI 项目一个都不空场；点进任意项目都能看界面、能体验。</p>
+      <h2>把 AI 做成<em>点得开</em>的产品，<br>把<em>口径</em>摊在明处。</h2>
+      <p class="lead">韩文蕾，AI 应用开发 / 智能体开发 / FDE。六个项目从需求拆解、编码测试到容器化与云上部署独立跑通交付全程；其中 4 个在线系统点开即登录页，2 个静态演示页用截图与录屏还原界面。部署位置、演示形态与统计口径都写在页面上，能点开，也能核对。</p>
       <div class="stats">
-        <div class="stat"><div class="num">5</div><div class="lbl">在线 Demo</div></div>
-        <div class="stat"><div class="num">5</div><div class="lbl">个项目</div></div>
-        <div class="stat"><div class="num">1</div><div class="lbl">台 4C8G</div></div>
-        <div class="stat"><div class="num">按需</div><div class="lbl">前端常驻 / 后端</div></div>
+        <div class="stat"><div class="num">4</div><div class="lbl">在线系统</div></div>
+        <div class="stat"><div class="num">6</div><div class="lbl">个项目</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">台云主机</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">Pages 演示页</div></div>
       </div>
     </section>
 
@@ -206,9 +208,9 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
          KB 已填 4 帧（kb-1..4）；ops/cs/da 已留 2 帧占位（ops-1/2、cs-1/2、da-1/2），待填。 -->
     <section class="sec" id="works" data-spy>
       <div class="sec-head">
-        <div class="sec-kicker">Selected Works</div>
-        <div class="sec-title">从想法到产品</div>
-        <div class="sec-sub">六个项目，两列排布：上封面、下要点——点开即登录页，演示账号在登录页一键填入。</div>
+        <div class="sec-kicker">02 / SELECTED WORKS</div>
+        <div class="sec-title">六个项目，<br>两种演示形态。</div>
+        <div class="sec-sub">06 PROJECTS · 04 LIVE · 02 STATIC · 截图与录屏均取自真实运行；在线系统演示账号一键填入，静态页点开即看。封面可悬停放大、点 ⇄ 切换多帧。</div>
       </div>
 
       <div class="wgrid">
@@ -219,12 +221,12 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
           JS
         </div>
         <div class="wbody">
-          <div class="fig">AGENT HUB</div>
+          <div class="fig">AGENT HUB · 在线</div>
           <h3>玖枢 · AI 智能体工作台</h3>
           <div class="wmeta"><div><div class="k">Role</div><div class="v">开发 + 上线</div></div><div><div class="k">Result</div><div class="v">公网可体验</div></div></div>
           <p>把智能体平台做成「点开就能用」：专家工作台、自动化任务、知识库与多模型接入一体，流式对话与实时工具调用；账号分三级权限（访客 / 成员 / 管理员），访客只能看演示面。全链路自建——Docker 镜像由 GitHub Actions 推到 GHCR，一条种子脚本自动建 provider、模型与智能体，登录页滑动验证通过后自动填入演示凭据（只填不提交），访客零输入门槛。</p>
           <div class="ptech"><span>Docker</span><span>FastAPI</span><span>多模型接入</span></div>
-          <a class="pbtn" href="http://39.105.211.92:8088/login" target="_blank" rel="noopener">打开演示 ↗</a>
+          <a class="pbtn" href="http://39.105.211.92:8088/login" target="_blank" rel="noopener">打开在线系统 ↗</a>
         </div>
       </article>
 
@@ -235,12 +237,12 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
           KB
         </div>
         <div class="wbody">
-          <div class="fig">FIG. 01 · RECALL / MILVUS</div>
+          <div class="fig">FIG. 01 · RECALL / MILVUS · 在线</div>
           <h3>文枢知识库</h3>
           <div class="wmeta"><div><div class="k">Role</div><div class="v">独立开发</div></div><div><div class="k">Result</div><div class="v">高精度召回</div></div></div>
           <p>一条从文档到答案的 RAG 链路：MinerU 解析并按标题层级切分，BGE-M3 生成稠密 + 稀疏双向量写入 Milvus 混合索引；向量、HyDE、联网三路并发召回，RRF 融合后精排截断——答案可溯源、证据不足主动拒答。已部署在线（单机演示环境，非完整生产项目）。</p>
           <div class="ptech"><span>RAG</span><span>Milvus</span><span>BGE-M3</span></div>
-          <a class="pbtn" href="http://113.44.185.222/kb/login.html?fresh=1" target="_blank" rel="noopener">打开演示 →</a>
+          <a class="pbtn" href="http://113.44.185.222/kb/login.html?fresh=1" target="_blank" rel="noopener">打开在线系统 →</a>
         </div>
       </article>
 
@@ -251,12 +253,12 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
           OPS
         </div>
         <div class="wbody">
-          <div class="fig">FIG. 02 · ORBIT / AGENT</div>
+          <div class="fig">FIG. 02 · ORBIT / AGENT · 在线</div>
           <h3>灵析电商运营助手</h3>
           <div class="wmeta"><div><div class="k">Role</div><div class="v">主导（Agent + 全栈）</div></div><div><div class="k">Result</div><div class="v">多智能体编排</div></div></div>
           <p>把分散在知识查询、取数报表、竞品分析里的运营工具，统一成覆盖售前→售中→售后全周期的多智能体平台：1 个编排主智能体 + 多个子智能体各管一摊、统一门户独立会话；执行过程经 WebSocket 实时推送到前端面板。</p>
           <div class="ptech"><span>LangGraph</span><span>Next.js</span><span>多智能体</span></div>
-          <a class="pbtn" href="http://113.44.185.222/ops/login" target="_blank" rel="noopener">打开演示 →</a>
+          <a class="pbtn" href="http://113.44.185.222/ops/login" target="_blank" rel="noopener">打开在线系统 →</a>
         </div>
       </article>
 
@@ -267,12 +269,12 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
           CS
         </div>
         <div class="wbody">
-          <div class="fig">FIG. 03 · TRI-TRACK</div>
+          <div class="fig">FIG. 03 · TRI-TRACK · 静态演示</div>
           <h3>电商智能客服</h3>
           <div class="wmeta"><div><div class="k">Role</div><div class="v">全栈开发</div></div><div><div class="k">Result</div><div class="v">三轨对话引擎</div></div></div>
-          <p>面向电商场景的对话式客服：FastAPI 双后端（客服 / 电商）+ MySQL 会话库 + Vue 3 前端；接口异常或历史为空时自动降级到虚拟对话与演示数据，演示永远不空场；含数字人视频应答。</p>
+          <p>面向电商场景的对话式客服：FastAPI 双后端（客服 / 电商）+ MySQL 会话库 + Vue 3 前端；接口异常或历史为空时自动降级到虚拟对话与演示数据，演示永远不空场；含数字人视频应答。作品集以录屏与界面截图呈现，静态页不含实时对话。</p>
           <div class="ptech"><span>FastAPI</span><span>数字人</span><span>RAG</span></div>
-          <a class="pbtn" href="cs-demo.html">离线演示 →</a>
+          <a class="pbtn" href="cs-demo.html">录屏与截图 →</a>
         </div>
       </article>
 
@@ -283,12 +285,12 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
           DA
         </div>
         <div class="wbody">
-          <div class="fig">FIG. 04 · NL2SQL</div>
+          <div class="fig">FIG. 04 · NL2SQL · 在线轻量演示</div>
           <h3>智能问数</h3>
           <div class="wmeta"><div><div class="k">Role</div><div class="v">全栈开发</div></div><div><div class="k">Result</div><div class="v">自然语言取数</div></div></div>
-          <p>把自然语言转成 SQL 与语义检索，业务人员自助取数，查询结果自动生成可视化图表；前端 + 预烘焙结果轻量演示，不依赖完整重栈。</p>
+          <p>把自然语言转成 SQL 与语义检索，业务人员自助取数，查询结果自动生成可视化图表；在线页面可打开，前端 + 预烘焙结果轻量演示，不依赖完整重栈。</p>
           <div class="ptech"><span>NL2SQL</span><span>语义检索</span><span>自动图表</span></div>
-          <a class="pbtn" href="http://113.44.185.222/da/?fresh=1&v=2" target="_blank" rel="noopener">打开演示 →</a>
+          <a class="pbtn" href="http://113.44.185.222/da/?fresh=1&v=2" target="_blank" rel="noopener">打开在线系统 →</a>
         </div>
       </article>
 
@@ -299,12 +301,12 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
           CR
         </div>
         <div class="wbody">
-          <div class="fig">FIG. 05 · AUDIT</div>
+          <div class="fig">FIG. 05 · AUDIT · 静态演示</div>
           <h3>明契智审 · 合同智能审查</h3>
           <div class="wmeta"><div><div class="k">Role</div><div class="v">独立开发</div></div><div><div class="k">Result</div><div class="v">三角色权限分幕</div></div></div>
-          <p>LangGraph 驱动的十节点合同审查流：条款结构化抽取 → 规则引擎逐条风险命中 → 审查结论 SHA256 存证防篡改；业务经办人 / 法务审查人 / 系统管理员三角色权限隔离，各角色所见界面与可执行操作严格分幕。</p>
+          <p>LangGraph 驱动的十节点合同审查流：条款结构化抽取 → 规则引擎逐条风险命中 → 审查结论 SHA256 存证防篡改；业务经办人 / 法务审查人 / 系统管理员三角色权限隔离，各角色所见界面与可执行操作严格分幕；作品集以静态截图页呈现三角色界面。</p>
           <div class="ptech"><span>条款结构化</span><span>风险命中</span><span>防篡改</span></div>
-          <a class="pbtn" href="cr-demo.html">打开演示 →</a>
+          <a class="pbtn" href="cr-demo.html">截图演示 →</a>
         </div>
       </article>
       </div>
@@ -313,66 +315,66 @@ footer .tags span{background:color-mix(in srgb,var(--acc) 12%,transparent);borde
     <!-- ===== Capabilities ===== -->
     <section class="sec" id="caps" data-spy>
       <div class="sec-head">
-        <div class="sec-kicker">Capabilities</div>
-        <div class="sec-title">四栏能力，一条技术栈</div>
-        <div class="sec-sub">每项能力都对应到具体项目的实战使用，而非泛泛而谈。</div>
+        <div class="sec-kicker">03 / CAPABILITIES</div>
+        <div class="sec-title">四类能力，<br>六个项目共用。</div>
+        <div class="sec-sub">每项都标了落在哪些项目上；覆盖度不等于熟练度，没用过的堆不进来。</div>
       </div>
       <div class="caps">
-        <div class="cap"><div class="cn">01 / 4</div><h4>后端与接口</h4><div class="ptech"><span>Python</span><span>FastAPI</span></div><div class="used">实际使用：智能客服 · 知识库</div></div>
-        <div class="cap"><div class="cn">02 / 4</div><h4>智能体编排</h4><div class="ptech"><span>LangGraph</span><span>多智能体</span></div><div class="used">实际使用：电商运营助手</div></div>
-        <div class="cap"><div class="cn">03 / 4</div><h4>检索与召回</h4><div class="ptech"><span>RAG</span><span>Milvus</span><span>BGE-M3</span></div><div class="used">实际使用：知识库 · 智能问数</div></div>
-        <div class="cap"><div class="cn">04 / 4</div><h4>前端交付</h4><div class="ptech"><span>Next.js</span><span>Vue</span></div><div class="used">实际使用：运营助手 · 智能客服</div></div>
+        <div class="cap"><div class="cn">01 / 4</div><h4>后端与接口</h4><div class="ptech"><span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>Docker</span></div><div class="used">实际使用：知识库 · 问数 · 运营工作台 · 客服</div></div>
+        <div class="cap"><div class="cn">02 / 4</div><h4>智能体编排</h4><div class="ptech"><span>LangGraph</span><span>LangChain</span><span>Checkpoint</span><span>MCP</span></div><div class="used">实际使用：运营工作台 · 知识库 · 客服</div></div>
+        <div class="cap"><div class="cn">03 / 4</div><h4>检索与召回</h4><div class="ptech"><span>BGE-M3</span><span>Milvus</span><span>Qdrant</span><span>RRF</span><span>Reranker</span></div><div class="used">实际使用：知识库 · 问数</div></div>
+        <div class="cap"><div class="cn">04 / 4</div><h4>前端交付</h4><div class="ptech"><span>Next.js</span><span>React</span><span>Vue 3</span><span>SSE</span></div><div class="used">实际使用：运营工作台 · 客服 · 问数</div></div>
       </div>
-      <div class="cap-note">COVERAGE ≠ PROFICIENCY · 分母 = 5 个项目 · 计入依据 = 各项目卡技术栈 pill 实测映射。</div>
+      <div class="cap-note">COVERAGE ≠ PROFICIENCY · SOURCE: 6 PROJECTS · 分母 = 6 个项目，计入依据 = 各项目卡技术栈 pill 实测映射。</div>
     </section>
 
     <!-- ===== Evidence / 数字 ===== -->
     <section class="sec" id="evidence" data-spy>
       <div class="sec-head">
-        <div class="sec-kicker">Evidence</div>
-        <div class="sec-title">可指认的部署事实</div>
-        <div class="sec-sub">每一格都写着口径与取证方式：总数能按分项核对，来源能照着再跑一遍。</div>
+        <div class="sec-kicker">04 / EVIDENCE · 实测口径</div>
+        <div class="sec-title">数字不修饰，<br>只列能复核的。</div>
+        <div class="sec-sub">每一格都写着口径与取证方式；来源 = 入口实测 + 部署记录，没测过的不列。</div>
       </div>
       <div class="evi">
-        <div class="evi-cell"><div class="en">01 / DEMOS</div><div class="ev">5</div><div class="el">在线 Demo 数</div><div class="es">知识库·运营·客服·问数·合同审查，Caddy 路径分发 · 2026</div></div>
-        <div class="evi-cell"><div class="en">02 / PROJECTS</div><div class="ev">5</div><div class="el">项目总数</div><div class="es">4 演示 + 1 作品集专项 · 2026</div></div>
-        <div class="evi-cell"><div class="en">03 / SERVER</div><div class="ev">1</div><div class="el">部署服务器</div><div class="es">华为云 Flexus L 4核8GiB · 单台</div></div>
-        <div class="evi-cell"><div class="en">04 / SITES</div><div class="ev">6</div><div class="el">站点路径</div><div class="es">/kb/ /ops/ /cs/ /da/ /cr-demo.html + 导航页 · Caddy</div></div>
-        <div class="evi-cell"><div class="en">05 / UPTIME</div><div class="ev">按需</div><div class="el">后端起停</div><div class="es">演示前 up、完事 down，内存即回收 · democtl</div></div>
-        <div class="evi-cell"><div class="en">06 / STACKS</div><div class="ev">∞</div><div class="el">技术覆盖</div><div class="es">Python / FastAPI / LangGraph / RAG / Next / Vue … · 自评</div></div>
+        <div class="evi-cell"><div class="en">01 / DEMOS</div><div class="ev">4</div><div class="el">在线系统</div><div class="es">玖枢 · 文枢知识库 · 灵析运营助手 · 智能问数，分布在 2 台云主机 · curl 入口实测</div></div>
+        <div class="evi-cell"><div class="en">02 / PROJECTS</div><div class="ev">6</div><div class="el">项目总数</div><div class="es">4 在线系统 + 2 静态演示页 · 2026 · 卡片逐张核对</div></div>
+        <div class="evi-cell"><div class="en">03 / SERVER</div><div class="ev">2</div><div class="el">台云主机</div><div class="es">39.105.211.92（玖枢）+ 113.44.185.222（Caddy 分发）· 另加 GitHub Pages · 部署记录</div></div>
+        <div class="evi-cell"><div class="en">04 / SITES</div><div class="ev">6</div><div class="el">个可点入口</div><div class="es">ECS：玖枢 :8088、/kb/、/ops/、/da/；Pages：客服录屏页、合同截图页 · 链接逐一打开</div></div>
+        <div class="evi-cell"><div class="en">05 / UPTIME</div><div class="ev">常驻</div><div class="el">服务运行</div><div class="es">kb 容器 / Caddy / 玖枢容器常态运行，非按需启停 · 服务状态实测</div></div>
+        <div class="evi-cell"><div class="en">06 / FORMS</div><div class="ev">2</div><div class="el">种演示形态</div><div class="es">在线系统 + 静态演示页 · 见作品区卡片标注 · 卡片标注核对</div></div>
       </div>
-      <div class="evi-note">数字口径：仅列本作品集可指认的部署事实，未实测的量不列。</div>
+      <div class="evi-note">口径：入口实测 + 部署记录 · 未测的不列，估算的不写，分项相加可复核总数。</div>
     </section>
 
     <!-- ===== About ===== -->
     <section class="sec" id="about" data-spy>
       <div class="sec-head">
-        <div class="sec-kicker">About</div>
-        <div class="sec-title">关于我</div>
-        <div class="sec-sub">安静的系统，清晰的边界。</div>
+        <div class="sec-kicker">05 / ABOUT · PROFILE</div>
+        <div class="sec-title">把想法，<br>做成能点开的东西。</div>
+        <div class="sec-sub">安静的系统，清晰的边界；演示能点开，口径能复核。</div>
       </div>
       <div class="about">
         <div class="cand">
-          <div class="row"><span class="k">NAME</span><span class="v">时安</span></div>
-          <div class="row"><span class="k">方向</span><span class="v">全栈 AI 工程师</span></div>
-          <div class="row"><span class="k">状态</span><span class="v">作品集 · Demo 部署</span></div>
-          <div class="row"><span class="k">MAIL</span><span class="v">you@example.com</span></div>
+          <div class="row"><span class="k">NAME</span><span class="v">韩文蕾</span></div>
+          <div class="row"><span class="k">方向</span><span class="v">AI 应用开发 / 智能体开发 / FDE</span></div>
+          <div class="row"><span class="k">状态</span><span class="v">作品集 · 2 台云主机 + GitHub Pages</span></div>
+          <div class="row"><span class="k">MAIL</span><span class="v">2584076700@qq.com</span></div>
         </div>
         <div class="bio">
-          <p>AI 应用全栈，从接口做到界面：知识库 RAG、多智能体运营、三轨客服到自然语言问数，一条链路从后端做到能用。喜欢把复杂系统做得安静、清晰、好演示。</p>
+          <p>把一句话需求，做成能点开、能核对、能回退的系统。先界定哪里交给模型、哪里必须由代码与护栏兜住；检索靠评测调参，编排靠注册表约束，演示靠真实界面而非效果图。</p>
           <div class="sec-kicker" style="margin-bottom:8px;">NOW · 最近在折腾</div>
           <ul class="now">
-            <li>检索：RAG 召回抠细节</li>
-            <li>编排：补 Agent 异常路径</li>
-            <li>部署：单台 4C8G 跑五个 Demo</li>
+            <li>检索：Bad Case 归因，用 Recall@5 驱动切块与重排调参</li>
+            <li>编排：确定性路由 + R0~R3 工具风险分级与审批闸门</li>
+            <li>部署：两台云主机 + Pages，六个项目分别托管</li>
           </ul>
         </div>
       </div>
     </section>
 
     <footer>
-      <span>© 2026 时安 · 部署：单服务器 4C8G + Caddy 路径分发 · 前端常驻 / 后端按需</span>
-      <span class="tags"><span>Python</span><span>LangGraph</span><span>FastAPI</span><span>RAG / Milvus</span><span>Next.js</span><span>Vue</span></span>
+      <span>© 2026 韩文蕾 · 部署：2 台云主机 + GitHub Pages · 演示形态以卡片标注为准，未测过的数据不列</span>
+      <span class="tags"><span>Python</span><span>FastAPI</span><span>LangGraph</span><span>RAG / Milvus</span><span>MCP</span><span>NL2SQL</span><span>Next.js</span><span>Vue 3</span></span>
     </footer>
   </main>
 </div>
