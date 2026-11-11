@@ -20,10 +20,16 @@
   #role { position: fixed; top: 12px; right: 16px; max-width: 46vw; padding: 7px 14px; border-radius: 999px;
           background: rgba(30,41,59,.85); border: 1px solid #334155; color: #e2e8f0;
           font: 12px/1.5 system-ui, sans-serif; z-index: 10; }
+  .cr-back { position: fixed; top: 14px; left: 14px; z-index: 20;
+             display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px;
+             background: rgba(30,41,59,.85); border: 1px solid #334155; color: #e2e8f0;
+             font: 13px/1 system-ui, sans-serif; text-decoration: none; }
+  .cr-back:hover { border-color: #38bdf8; color: #38bdf8; }
 </style>
   <link rel="preload" as="image" href="shots/cr-slide-01.webp">
 </head>
 <body>
+  <a class="cr-back" href="index.html#cr">← 返回作品集</a>
   <div id="hint">点击屏幕或按 → / ← 键翻页</div>
   <div id="stage"></div>
   <div id="caption"></div>
@@ -91,6 +97,7 @@ stage.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight' || e.key === ' ') next();
   else if (e.key === 'ArrowLeft') prev();
+  else if (e.key === 'Escape') location.href = 'index.html#cr';
 });
 go(0);
 </script>
